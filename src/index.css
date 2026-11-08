@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-charcoal: #111210;
+    --color-warm-white: #F1EEE7;
+    --color-graphite: #242521;
+    --color-stone: #C8BFB1;
+    --color-thermowood: #302720;
+    --color-bronze: #8A745C;
+  }
+
+  html {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--color-charcoal);
+    color: var(--color-warm-white);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #111210;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #302720;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8A745C;
+  }
+}
+
+.font-serif {
+  font-family: 'Bodoni Moda', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* Swiss typography accents & styling */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Glassmorphism prevention - crisp architectural borders */
+.border-architectural {
+  border: 1px solid rgba(200, 191, 177, 0.15);
+}
+
+.border-architectural-strong {
+  border: 1px solid rgba(200, 191, 177, 0.35);
+}
+
+/* Canvas viewport safety container: prevents 300px fallback */
+canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+}
+
+.webgl-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Interactive mode pointer events */
+.webgl-interactive {
+  pointer-events: auto !important;
+}
